@@ -15,14 +15,15 @@
         const domNode = document.getElementById('app');
         
 
-        function Header(){
+        function Header({title}){
+            console.log(title);
             return <h1>Develop. Preview. Ship.</h1>;
         }
         
         function Homepage(){
             return <div>
                 {/* Nesting the Header component */}
-                <Header/>
+                <Header title='React'/>
             </div>;
         }
 
