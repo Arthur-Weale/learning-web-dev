@@ -21,6 +21,7 @@
                 return 'Default title'
             }
         }
+        
         function Header({title}){
             console.log();
             return <h1>{createTitle(title)}</h1>;
@@ -28,6 +29,13 @@
         
         function Homepage(){
             const names = ['Ada lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+            function handleClick() {
+                console.log("increment like count");
+                setLikes(likes + 1)
+            }
+
+            const [likes, setLikes] = React.useState(0);
 
             return <div>
                 {/* Nesting the Header component */}
@@ -37,6 +45,7 @@
                         <li key={name}>{name}</li>
                     ))}
                 </ul>
+                <button onClick={handleClick}>Like({likes})</button>
             </div>;
         }
 
